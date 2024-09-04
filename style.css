@@ -1,0 +1,15 @@
+header {
+    background-color: #EEEEEE;
+}
+
+nav {
+    background-color: #EEEEEE;
+}
+
+a:link {
+    color: rgb(140, 98, 57)
+}
+
+a:hover {
+    color: rgba(213, 151, 65, 0.3)
+}
