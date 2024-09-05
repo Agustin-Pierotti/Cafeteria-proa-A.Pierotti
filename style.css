@@ -1,9 +1,21 @@
 header {
     background-color: #EEEEEE;
+    display: flex; 
+    justify-content: center;
 }
 
 nav {
     background-color: #EEEEEE;
+}
+
+.navbtn {
+    width: 25%;
+    text-align: center;
+    border: 3px solid #EEEEEE ; 
+}
+
+.navbtn:hover {
+    border: 3px solid rgba(213, 151, 65, 0.3) ;
 }
 
 a:link {
@@ -12,4 +24,18 @@ a:link {
 
 a:hover {
     color: rgba(213, 151, 65, 0.3)
+}
+
+#ImagenCool{
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+    text-align: center;
+}
+
+#ImagenCool{
+    justify-content: center;
+    align-items: center;
 }
