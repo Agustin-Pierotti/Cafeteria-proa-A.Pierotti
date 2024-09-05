@@ -1,5 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap");
+
+* {
+    font-family: 'Lato';
+}
 body {
     margin: 0px;
+    font-family: Lato;
 }
 
 header {
@@ -48,6 +54,7 @@ a:hover {
 #BigText {
     color: rgba(255, 255, 255, .7);
     font-size: 78;
+    font-weight: bold;
 }
 
 section{
