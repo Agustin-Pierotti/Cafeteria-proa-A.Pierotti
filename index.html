@@ -5,7 +5,7 @@
     </head>
     <body>
         <header>
-            <img src="./logo.png" alt="logo de la cafeteria pepón">
+            <img id="logo" src="./images/logo.webp" alt="logo de la cafeteria pepón">
         </header>
         <nav style="justify-content: space-between; display: flex;">
             <div class="navbtn"><p>LA CAFETERÍA</p></div>
@@ -13,17 +13,55 @@
             <div class="navbtn"><p>NUESTRO PRODUCTOS</p></div>
             <div class="navbtn"><p>CONTACTO</p></div>
         </nav>
-        <article id="ImagenCool">
-            <h1>texto o algo</h1>
+        <article id="ImagenCool" >
+            <div><h1 id="BigText">Un café especial</h1></div>
         </article>
         <section>
-            <h2>Lorem ipsum dolor sit amet consectetur</h2>
+            <h2 style="margin: 40px 0px 20px;">Lorem ipsum dolor sit amet consectetur</h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores error ipsa ullam deserunt. Recusandae atque eum molestiae, maiores tempore dignissimos fuga, deserunt quos, vero error ipsum. Vitae voluptas officia earum!</p>
-            <h2>Lorem ipsum dolor sit amet consectetur</h2>
+            <h2 style="margin: 40px 0px 20px;">Lorem ipsum dolor sit amet consectetur</h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores error ipsa ullam deserunt. Recusandae atque eum molestiae, maiores tempore dignissimos fuga, deserunt quos, vero error ipsum. Vitae voluptas officia earum!</p>
+        </section>
+        <section>
             <div id="ImageContainer">
-                
+                <div>Croissants</div>
+                <div>Tortas</div>
+                <div>Sandwiches</div>  
+                <div>Bebidas frías</div>
+                <div><img src="./images/croissants.avif" class="FoodStuffs" alt="un Croissant"></div>
+                <div><img src="./images/tortas.avif" class="FoodStuffs" alt="una Torta"></div>  
+                <div><img src="./images/sandwiches.avif" class="FoodStuffs" alt="un sandwich"></div>
+                <div><img src="./images/bebidasfrias.avif" class="FoodStuffs" alt="unas bebidas frias"></div>
             </div>
         </section>
+        <footer>
+            <h1 style="text-align: center;">lorem ipsum</h1>
+            <div style="display: flex; margin: 0px 5em;">
+                <div id="LeftFooter">
+                    <ul>
+                        <li>Av.Siempre Viva 5492</li>
+                        <li>Corral de Bustos Ifflinger</li>
+                        <li>13815 3180915153</li>
+                    </ul>
+                </div>
+                <div id="RightFooter">
+                    <form>
+                        <label for="Nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre"/>
+
+                        <label for="Telefono">Telefono:</label>
+                        <input type="number" id="numero" name="numero"/>
+
+                        <label for="Email">Email:</label>
+                        <input type="email" id="email" name="email"/>
+                        
+                        <input type="submit" value="Enviar"/>
+                    </form>
+                </div>
+
+            </div>
+
+        </footer>
+
     </body>
 </html>

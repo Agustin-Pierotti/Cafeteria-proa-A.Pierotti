@@ -1,7 +1,18 @@
+body {
+    margin: 0px;
+}
+
 header {
     background-color: #EEEEEE;
     display: flex; 
     justify-content: center;
+}
+
+#logo {
+    width: 3cm;
+    height: 3cm;
+    border-radius: 50%;
+    margin: 0.5em 0px;
 }
 
 nav {
@@ -26,16 +37,58 @@ a:hover {
     color: rgba(213, 151, 65, 0.3)
 }
 
-#ImagenCool{
+#ImagenCool {
+    height: 48rem;
+    display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(./images/img_fondo.avif);
+}
+
+#BigText {
+    color: rgba(255, 255, 255, .7);
+    font-size: 78;
 }
 
 section{
     text-align: center;
+    margin:0px 0px 4em 0px
 }
 
-#ImagenCool{
+section div {
+    font-weight: bold;
+}
+
+#ImageContainer{
+    display: grid;
     justify-content: center;
     align-items: center;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+}
+
+.FoodStuffs{
+    width: 15em;
+    height: 11em;
+    padding: 0px 1em;
+}
+
+footer{
+    padding-top: 0.5rem;
+    background-color: #58462c;
+    color: #EEEEEE;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+#LeftFooter{
+    justify-content: left;
+    width: 75%;
+}
+
+#RightFooter{
+    justify-content: right;
+    text-align: end;
+    width: 25%;
 }
