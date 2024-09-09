@@ -66,6 +66,19 @@ section div {
     font-weight: bold;
 }
 
+.FoodStuffs{
+    width: 15em;
+    height: 11em;
+    padding: 0px 1em;
+}
+
+#shopList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0px;
+}
+
 #ImageContainer{
     display: grid;
     justify-content: center;
@@ -74,10 +87,28 @@ section div {
     gap: 10px;
 }
 
-.FoodStuffs{
-    width: 15em;
-    height: 11em;
-    padding: 0px 1em;
+.shopItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.BotonAgregar{
+    background-color: greenyellow;
+    color: gray;
+}
+
+.BotonSacar{
+    background-color: red;
+    color: #EEEEEE;
+}
+
+#botonCalcular{
+    background-color: #3387ff;
+    color: #EEEEEE;
+    padding: 1em 10em;
+    font-size: larger;
 }
 
 footer{
