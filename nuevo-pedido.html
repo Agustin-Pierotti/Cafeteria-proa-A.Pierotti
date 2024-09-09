@@ -4,6 +4,7 @@
         <link href="style.css" rel="stylesheet" type="text/css" media="all">
     </head>
     <body>
+        <script src="shop.js"></script>
 
         <header>
             <img id="logo" src="./images/logo.webp" alt="logo de la cafeteria pepón">
@@ -22,28 +23,28 @@
                     <div>Croissant</div>
                     <div><img src="./images/croissants.avif" class="FoodStuffs" alt="un Croissant"></div>
                     <div><p style="color:gray;">9.99AR$</p></div>
-                    <div><button class="BotonAgregar" type="button" onclick="">Agregar</button></div>
+                    <div><button id="btn1" class="BotonAgregar off" type="button" onclick="toggleButton(1)">Agregar</button></div>
                 </div>
                 <div class="shopItem">
                     <div>Torta</div>
-                    <div><img src="./images/tortas.avif" class="FoodStuffs" alt="una torta"></div>
+                    <div><img src="./images/tortas.avif" class="FoodStuffs" alt="una Torta"></div>
                     <div><p style="color:gray;">29.99AR$</p></div>
-                    <div><button class="BotonAgregar" type="button" onclick="">Agregar</button></div>
+                    <div><button id="btn2" class="BotonAgregar off" type="button" onclick="toggleButton(2)">Agregar</button></div>
                 </div>
                 <div class="shopItem">
                     <div>Sandwich</div>
                     <div><img src="./images/sandwiches.avif" class="FoodStuffs" alt="un Sandwich"></div>
                     <div><p style="color:gray;">19.99AR$</p></div>
-                    <div><button class="BotonAgregar" type="button" onclick="">Agregar</button></div>
+                    <div><button id="btn3" class="BotonAgregar off" type="button" onclick="toggleButton(3)">Agregar</button></div>
                 </div>
                 <div class="shopItem">
                     <div>Bebida Fria</div>
-                    <div><img src="./images/bebidasfrias.avif" class="FoodStuffs" alt="una beida fria"></div>
+                    <div><img src="./images/bebidasfrias.avif" class="FoodStuffs" alt="una bebida fria"></div>
                     <div><p style="color:gray;">4.99AR$</p></div>
-                    <div><button class="BotonAgregar" type="button" onclick="">Agregar</button></div>
+                    <div><button id="btn4" class="BotonAgregar off" type="button" onclick="toggleButton(4)">Agregar</button></div>
                 </div>
             </div>
-            <div><button id="botonCalcular" type="button" onclick="">Calcular</button></div>
+            <div><button id="botonCalcular" type="button" onclick="calcular()">Calcular</button></div>
         </section>
         <footer>
             <h1 style="text-align: center;">lorem ipsum</h1>

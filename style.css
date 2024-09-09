@@ -94,13 +94,13 @@ section div {
     flex-direction: column;
 }
 
-.BotonAgregar{
-    background-color: greenyellow;
-    color: gray;
+.on{
+    background-color: red;
+    color: #EEEEEE;
 }
 
-.BotonSacar{
-    background-color: red;
+.off{
+    background-color: green;
     color: #EEEEEE;
 }
 
