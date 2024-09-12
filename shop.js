@@ -6,7 +6,7 @@ const buttonStates = [
 ];
 function lessAmount(index) {
     const amountbox = document.getElementById(`Amount${index}`);
-    const array = buttonStates[index - 1];
+    const array = buttonStates[index];
     
     if (array.amount > 1) {
         array.amount--;
@@ -16,7 +16,7 @@ function lessAmount(index) {
 }
 function addAmount(index) {
     const amountbox = document.getElementById(`Amount${index}`);
-    const array = buttonStates[index - 1];
+    const array = buttonStates[index];
     array.amount++;
     amountbox.children[1].innerHTML = array.amount;
 }
@@ -24,7 +24,7 @@ function addAmount(index) {
 function toggleButton(index) {
     const btn = document.getElementById(`btn${index}`);
     const amtbox = document.getElementById(`Amount${index}`);
-    const state = buttonStates[index - 1];
+    const state = buttonStates[index];
     state.active = !state.active;
     if (state.active) {
         btn.classList.remove('off');
@@ -50,9 +50,18 @@ function calcular() {
     alert(message);
 }
 function borrar() {
-    buttonStates.forEach (
-        cantidad => {cantidad.amount = 1;}
-        amountbox.children[1].innerHTML = array.amount
-    );
-    
+    buttonStates.forEach((cantidad, index) => {
+        cantidad.amount = 1;
+        const amountbox = document.getElementById(`Amount${index}`);
+        const btn = document.getElementById(`btn${index}`);
+        if (amountbox) {
+            amountbox.children[1].innerHTML = cantidad.amount;
+            if (btn) {
+                btn.classList.remove('on');
+                btn.classList.add('off');
+                amountbox.classList.add('invis');
+                btn.innerHTML = "Agregar";
+            }
+        }
+    });
 }
