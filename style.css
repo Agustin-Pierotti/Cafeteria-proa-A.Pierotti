@@ -109,6 +109,34 @@ section div {
     color: #EEEEEE;
     padding: 1em 10em;
     font-size: larger;
+    margin-bottom: 1em;
+}
+
+#botonBorrar{
+    background-color: #ff3d33;
+    color: #EEEEEE;
+    padding: 1em 9.4em;
+    font-size: larger;
+    margin-bottom: 1em;
+}
+
+.amountBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    margin-bottom: 0.5em;
+}
+.invis{
+    display: none;
+}
+.amountButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(168, 157, 157);
+    color: white;
+    height: 2.3em;
 }
 
 footer{

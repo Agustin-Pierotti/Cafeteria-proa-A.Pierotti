@@ -1,20 +1,40 @@
 const buttonStates = [
-    { name: "Croissant", value: 9.99, active: false },
-    { name: "Torta", value: 29.99, active: false },
-    { name: "Sandwich", value: 19.99, active: false },
-    { name: "bebida fria", value: 4.99, active: false }
+    { name: "Croissant", value: 9.99, active: false, amount:1},
+    { name: "Torta", value: 29.99, active: false, amount:1},
+    { name: "Sandwich", value: 19.99, active: false, amount:1},
+    { name: "bebida fria", value: 4.99, active: false, amount:1}
 ];
+function lessAmount(index) {
+    const amountbox = document.getElementById(`Amount${index}`);
+    const array = buttonStates[index - 1];
+    
+    if (array.amount > 1) {
+        array.amount--;
+    };
+    
+    amountbox.children[1].innerHTML = array.amount;
+}
+function addAmount(index) {
+    const amountbox = document.getElementById(`Amount${index}`);
+    const array = buttonStates[index - 1];
+    array.amount++;
+    amountbox.children[1].innerHTML = array.amount;
+}
+
 function toggleButton(index) {
     const btn = document.getElementById(`btn${index}`);
+    const amtbox = document.getElementById(`Amount${index}`);
     const state = buttonStates[index - 1];
     state.active = !state.active;
     if (state.active) {
         btn.classList.remove('off');
         btn.classList.add('on');
+        amtbox.classList.remove('invis');
         btn.innerHTML = "Quitar";
     } else {
         btn.classList.remove('on');
         btn.classList.add('off');
+        amtbox.classList.add('invis');
         btn.innerHTML = "Agregar";
     }
 }
@@ -23,9 +43,16 @@ function calcular() {
     let message = '';
     let total = 0;
     activeButtons.forEach(button => {
-        message += `${button.name} | ${button.value}\n`;
-        total += button.value;
+        message += `${button.name} | ${button.value} x ${button.amount}\n`;
+        total += button.value * button.amount;
     });
     message += `Total: ${total}`;
     alert(message);
+}
+function borrar() {
+    buttonStates.forEach (
+        cantidad => {cantidad.amount = 1;}
+        amountbox.children[1].innerHTML = array.amount
+    );
+    
 }
