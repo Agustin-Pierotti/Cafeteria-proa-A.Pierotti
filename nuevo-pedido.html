@@ -16,57 +16,56 @@
             <div class="navbtn"><p>NUESTRO PRODUCTOS</p></div>
             <div class="navbtn"><p>CONTACTO</p></div>
         </nav>
-
         <section>
-            <div id="shopList">
+            <div id="shopRow">
                 <div class="shopItem">
-                    <div>Croissant</div>
-                    <div><img src="./images/croissants.avif" class="FoodStuffs" alt="un Croissant"></div>
-                    <div><p style="color:gray;">9.99AR$</p></div>
+                    <p>Croissant</p>
+                    <img src="./images/croissants.avif" alt="un Croissant">
+                    <p>9.99AR$</p>
                     <div id="Amount0" class="amountBox invis">
-                        <div><button class="amountButtons" style="justify-content: left;" onclick="lessAmount(0)">-</button></div>
-                        <div style="align-items:center; justify-content:center; padding:5px">1</div>
-                        <div><button class="amountButtons" style="justify-content: right;" onclick="addAmount(0)">+</button></div>
+                        <button onclick="lessAmount(0)">-</button>
+                        <div>1</div>
+                        <button onclick="addAmount(0)">+</button>
                     </div>
                     <div><button id="btn0" class="BotonAgregar off" type="button" onclick="toggleButton(0)">Agregar</button></div>
                 </div>
                 <div class="shopItem">
-                    <div>Torta</div>
-                    <div><img src="./images/tortas.avif" class="FoodStuffs" alt="una Torta"></div>
-                    <div><p style="color:gray;">29.99AR$</p></div>
+                    <p>Torta</p>
+                    <img src="./images/tortas.avif" alt="una Torta">
+                    <p>29.99AR$</p>
                     <div id="Amount1" class="amountBox invis">
-                        <div><button class="amountButtons" style="justify-content: left;" onclick="lessAmount(1)">-</button></div>
-                        <div style="align-items:center; justify-content:center; padding:5px">1</div>
-                        <div><button class="amountButtons" style="justify-content: right;" onclick="addAmount(1)">+</button></div>
+                        <button onclick="lessAmount(1)">-</button>
+                        <div>1</div>
+                        <button onclick="addAmount(1)">+</button>
                     </div>
-                    <div><button id="btn1" class="BotonAgregar off" type="button" onclick="toggleButton(1)">Agregar</button></div>
+                    <button id="btn1" class="BotonAgregar off" type="button" onclick="toggleButton(1)">Agregar</button>
                 </div>
                 <div class="shopItem">
-                    <div>Sandwich</div>
-                    <div><img src="./images/sandwiches.avif" class="FoodStuffs" alt="un Sandwich"></div>
-                    <div><p style="color:gray;">19.99AR$</p></div>
+                    <p>Sandwich</p>
+                    <img src="./images/sandwiches.avif" alt="un Sandwich">
+                    <p>19.99AR$</p>
                     <div id="Amount2" class="amountBox invis">
-                        <div><button class="amountButtons" style="justify-content: left;" onclick="lessAmount(2)">-</button></div>
-                        <div style="align-items:center; justify-content:center; padding:5px">1</div>
-                        <div><button class="amountButtons" style="justify-content: right;" onclick="addAmount(2)">+</button></div>
+                        <button onclick="lessAmount(2)">-</button>
+                        <div>1</div>
+                        <button onclick="addAmount(2)">+</button>
                     </div>
                     <button id="btn2" class="BotonAgregar off" type="button" onclick="toggleButton(2)">Agregar</button>
                 </div>
                 <div class="shopItem">
-                    <div>Bebida Fria</div>
-                    <div><img src="./images/bebidasfrias.avif" class="FoodStuffs" alt="una bebida fria"></div>
-                    <div><p style="color:gray;">4.99AR$</p></div>
+                    <p>Bebida Fria</p>
+                    <img src="./images/bebidasfrias.avif" alt="una bebida fria">
+                    <p>4.99AR$</p>
                     <div id="Amount3" class="amountBox invis">
-                        <button class="amountButtons" style="justify-content: left;" onclick="lessAmount(3)">-</button>
-                        <div style="align-items:center; justify-content:center; padding:5px">1</div>
-                        <button class="amountButtons" style="justify-content: right;" onclick="addAmount(3)">+</button>
+                        <button onclick="lessAmount(3)">-</button>
+                        <div>1</div>
+                        <button onclick="addAmount(3)">+</button>
                     </div>
                     <button id="btn3" class="BotonAgregar off" type="button" onclick="toggleButton(3)">Agregar</button>
                 </div>
             </div>
             <div><button id="botonCalcular" type="button" onclick="calcular()">Calcular</button></div>
-            <div><button id="botonBorrar" type="button" onclick="borrar()">Borar Todo</button></div>
-        </section>
+            <div><button id="botonBorrar" type="button" onclick="borrar()">Borrar Todo</button></div>
+        </section>  
         <footer>
             <h1 style="text-align: center;">lorem ipsum</h1>
             <div style="display: flex; margin: 0px 5em;">

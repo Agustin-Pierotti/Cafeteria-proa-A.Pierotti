@@ -4,6 +4,7 @@ const buttonStates = [
     { name: "Sandwich", value: 19.99, active: false, amount:1},
     { name: "bebida fria", value: 4.99, active: false, amount:1}
 ];
+
 function lessAmount(index) {
     const amountbox = document.getElementById(`Amount${index}`);
     const array = buttonStates[index];
@@ -14,6 +15,7 @@ function lessAmount(index) {
     
     amountbox.children[1].innerHTML = array.amount;
 }
+
 function addAmount(index) {
     const amountbox = document.getElementById(`Amount${index}`);
     const array = buttonStates[index];
@@ -38,6 +40,8 @@ function toggleButton(index) {
         btn.innerHTML = "Agregar";
     }
 }
+
+
 function calcular() {
     const activeButtons = buttonStates.filter(button => button.active);
     let message = '';
@@ -49,6 +53,8 @@ function calcular() {
     message += `Total: ${total}`;
     alert(message);
 }
+
+
 function borrar() {
     buttonStates.forEach((cantidad, index) => {
         cantidad.amount = 1;

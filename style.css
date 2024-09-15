@@ -32,15 +32,15 @@ nav {
 }
 
 .navbtn:hover {
-    border: 3px solid rgba(213, 151, 65, 0.3) ;
+    border: 3px solid #d597414d ;
 }
 
 a:link {
-    color: rgb(140, 98, 57)
+    color: #8c6239
 }
 
 a:hover {
-    color: rgba(213, 151, 65, 0.3)
+    color: #d597414d
 }
 
 #ImagenCool {
@@ -52,7 +52,7 @@ a:hover {
 }
 
 #BigText {
-    color: rgba(255, 255, 255, .7);
+    color: #ffffffb3;
     font-size: 78;
     font-weight: bold;
 }
@@ -66,20 +66,7 @@ section div {
     font-weight: bold;
 }
 
-.FoodStuffs{
-    width: 15em;
-    height: 11em;
-    margin: 1em 0.5em auto 0.5em;
-    border-radius: 30px;
-    border: 3px solid #ffffff;
-}
 
-#shopList{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 3rem 0px;
-}
 
 #ImageContainer{
     display: grid;
@@ -89,17 +76,42 @@ section div {
     gap: 10px;
 }
 
+/* Shop stuff */
+
+#shopRow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0px;
+}
+
+.shopItem p:last-of-type{
+    color:#808080;
+}
+
+.shopItem p:first-of-type{
+    margin-bottom: 0px;
+}
+
 .shopItem{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
-    border: 4px solid rgb(142, 142, 142);
+    border: 4px solid #8e8e8e;
     height: 29rem;
     font-size: larger;
     margin: 0px 0.3em;
     background-color: #dddddd;
+}
+
+.shopItem img {
+    width: 15em;
+    height: 11em;
+    margin: 1em 0.5em auto 0.5em;
+    border-radius: 30px;
+    border: 3px solid #ffffff;
 }
 
 .botonAgregar {
@@ -108,54 +120,116 @@ section div {
     align-items: flex-end;
     font-size: 1em;
     border-radius: 10px;
+    margin-bottom: 2em;
 }
 
 .on{
-    background-color: red;
-    border: 3px solid rgb(114, 11, 11);
+    background-color: #ff0000;
+    border: 3px solid #720b0b;
+    color: #EEEEEE;
+}
+
+.on:active{
+    background-color: #ff9d9d;
+    border: 3px solid #694040;
     color: #EEEEEE;
 }
 
 .off{
-    background-color: green;
-    border: 3px solid rgb(16, 73, 8);
+    background-color: #008000;
+    border: 3px solid #104908;
+    color: #EEEEEE;
+}
+
+.off:active{
+    background-color: #9fb89f;
+    border: 3px solid #4e744b;
     color: #EEEEEE;
 }
 
 #botonCalcular{
     background-color: #3387ff;
+    border: 3px solid #17456b;
+    border-radius: 10px;
     color: #EEEEEE;
     padding: 1em 10em;
     font-size: larger;
     margin-bottom: 1em;
 }
 
+#botonCalcular:active{
+    background-color: #b6d4ff;
+    border: 3px solid #667d8f;
+}
+
 #botonBorrar{
     background-color: #ff3d33;
+    border: 3px solid #6d1515;
+    border-radius: 10px;
     color: #EEEEEE;
     padding: 1em 9.4em;
     font-size: larger;
     margin-bottom: 1em;
 }
 
+#botonBorrar:active{
+    background-color: #ffb6b6;
+    border: 3px solid #8f6666;
+}
+
 .amountBox{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: gray;
+    background-color: #808080;
     margin-bottom: 0.5em;
+    border-radius: 3px;
 }
+
+.amountBox div {
+    align-items:center; 
+    justify-content:center; 
+    padding:5px
+}
+
+
 .invis{
     visibility:hidden;
 }
-.amountButtons{
+
+.amountBox button {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(168, 157, 157);
-    color: white;
+    background-color: #a89d9d;
+    border: 1px solid #525050;
+    color: #dddddd;
+    font-weight: bolder;
     height: 2.3em;
+    border-radius: 3px;
 }
+
+.amountBox button:first-of-type {
+    justify-content: left;
+}
+.amountBox button:active:first-of-type {
+    background-color: #dfdddd;
+    border: 1px solid #999999;
+    color: #868686;
+}
+
+.amountBox button:last-of-type {
+    justify-content: right;
+}
+.amountBox button:active:last-of-type {
+    background-color: #dfdddd;
+    border: 1px solid #999999;
+    color: #868686;
+}
+
+
+
+
 
 footer{
     padding-top: 0.5rem;
