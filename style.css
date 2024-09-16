@@ -78,7 +78,7 @@ section div {
 
 /* Shop stuff */
 
-#shopRow{
+.shopRow{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,6 +104,7 @@ section div {
     font-size: larger;
     margin: 0px 0.3em;
     background-color: #dddddd;
+    font-weight: bolder;
 }
 
 .shopItem img {
