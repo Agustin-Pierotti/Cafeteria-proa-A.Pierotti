@@ -10,23 +10,22 @@ const shoprow = document.createElement("div");
 shoprow.classList.add("shopRow");
 section.appendChild(shoprow);
 
-Productdata.forEach ((item, index) => {
-
+Productdata.forEach((item, index) => {
     const shopitem = document.createElement("div");
     shopitem.classList.add("shopItem");
 
     const itemname = document.createElement("p");
-    itemname.innerText = (item.name);
+    itemname.innerText = item.name;
 
     const image = document.createElement("img");
-    image.src = (item.image);
+    image.src = item.image;
 
     const price = document.createElement("p");
-    price.innerText = item.value + " AR$" ;
+    price.innerText = item.value + " AR$";
 
     const amountbox = document.createElement("div");
     amountbox.classList.add("amountbox", "invis");
-    amountbox.setAttribute("id", "Amount("+ index + ")" );
+    amountbox.setAttribute("id", "Amount" + index); 
 
     const minusbtn = document.createElement("button");
     minusbtn.innerText = "-";
@@ -37,7 +36,7 @@ Productdata.forEach ((item, index) => {
 
     const plusbtn = document.createElement("button");
     plusbtn.innerText = "+";
-    plusbtn.setAttribute("onclick", "addAmount(" + index + ")" );
+    plusbtn.setAttribute("onclick", "addAmount(" + index + ")");
 
     const agregar = document.createElement("button");
     agregar.innerText = "Agregar";
@@ -54,10 +53,6 @@ Productdata.forEach ((item, index) => {
     amountbox.appendChild(plusbtn);
     shopitem.appendChild(agregar);
     shoprow.appendChild(shopitem);
-
 });
 
-
-
-// Append to body:
 
