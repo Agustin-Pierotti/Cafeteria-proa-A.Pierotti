@@ -2,11 +2,17 @@ const Productdata = [
     { name: "Croissant", value: 9.99, image: "./images/croissants.avif"},
     { name: "Torta", value: 29.9, image: "./images/tortas.avif"},
     { name: "Sandwich", value: 19.99, image: "./images/sandwiches.avif"},
-    { name: "bebida fria", value: 4.99, image: "./images/bebidasfrias.avif"}
+    { name: "bebida fria", value: 4.99, image: "./images/bebidasfrias.avif"},
+    { name: "Croissant", value: 9.99, image: "./images/croissants.avif"},
+    { name: "Torta", value: 29.9, image: "./images/tortas.avif"},
+    { name: "Sandwich", value: 19.99, image: "./images/sandwiches.avif"},
+    { name: "bebida fria", value: 4.99, image: "./images/bebidasfrias.avif"},
+    { name: "Sandwich", value: 19.99, image: "./images/sandwiches.avif"}
+
 ];
 
 const section = document.getElementById("shopSection");
-const shoprow = document.createElement("div");
+let shoprow = document.createElement("div");
 shoprow.classList.add("shopRow");
 section.appendChild(shoprow);
 
@@ -53,6 +59,11 @@ Productdata.forEach((item, index) => {
     amountbox.appendChild(plusbtn);
     shopitem.appendChild(agregar);
     shoprow.appendChild(shopitem);
+
+    if ((index + 1) % 4 === 0 && index !== Productdata.length - 1) {
+        shoprow = document.createElement("div");
+        shoprow.classList.add("shopRow");
+        section.appendChild(shoprow);
+    }
+
 });
-
-
