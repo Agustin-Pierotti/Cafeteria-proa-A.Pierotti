@@ -1,15 +1,35 @@
 const Productdata = [
-    { name: "Croissant", value: 9.99, image: "./images/croissants.avif"},
-    { name: "Torta", value: 29.9, image: "./images/tortas.avif"},
-    { name: "Sandwich", value: 19.99, image: "./images/sandwiches.avif"},
-    { name: "bebida fria", value: 4.99, image: "./images/bebidasfrias.avif"},
-    { name: "Croissant", value: 9.99, image: "./images/croissants.avif"},
-    { name: "Torta", value: 29.9, image: "./images/tortas.avif"},
-    { name: "Sandwich", value: 19.99, image: "./images/sandwiches.avif"},
-    { name: "bebida fria", value: 4.99, image: "./images/bebidasfrias.avif"},
-    { name: "Sandwich", value: 19.99, image: "./images/sandwiches.avif"}
-
+    { name: "Croissant", value: 5000, image: "./images/croissants.avif"},
+    { name: "Torta", value: 15000, image: "./images/tortas.avif"},
+    { name: "Sandwich", value: 7500, image: "./images/sandwiches.avif"},
+    { name: "bebida fria", value: 3000, image: "./images/bebidasfrias.avif"}
 ];
+let dolarunidad = 0
+let eurounidad = 0
+async function fetchDolar() {
+    try {
+        const response = await fetch("https://dolarapi.com/v1/dolares/blue");
+        const data = await response.json();
+        dolarunidad = data.venta;
+
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+async function fetchEuro() {
+    try {
+        const response = await fetch("https://dolarapi.com/v1/cotizaciones/eur");
+        const data = await response.json();
+        eurounidad = data.venta;
+
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+fetchDolar();
+fetchEuro();
 
 const section = document.getElementById("shopSection");
 let shoprow = document.createElement("div");
@@ -67,3 +87,49 @@ Productdata.forEach((item, index) => {
     }
 
 });
+
+  
+
+
+function preciopeso() {
+    const shopItems = document.querySelectorAll('.shopItem'); 
+
+
+    Productdata.forEach((item, index) => {
+        const shopItem = shopItems[index];
+        if (shopItem) {
+            const price = shopItem.querySelectorAll('p')[1];
+            price.innerText = item.value + " AR$";
+        }
+    });
+}
+
+function preciodolar() {
+    const shopItems = document.querySelectorAll('.shopItem'); 
+    
+
+    Productdata.forEach((item, index) => {
+        const shopItem = shopItems[index];
+        if (shopItem) {
+            dolar = item.value / dolarunidad ;
+            dolar = Math.trunc(dolar* 100) / 100;
+            const price = shopItem.querySelectorAll('p')[1];
+            price.innerText = dolar + " U$D";
+        }
+    });
+}
+
+function precioeuro() {
+    const shopItems = document.querySelectorAll('.shopItem'); 
+    
+
+    Productdata.forEach((item, index) => {
+        const shopItem = shopItems[index];
+        if (shopItem) {
+            euro = item.value / eurounidad ;
+            euro = Math.trunc(euro* 100) / 100;
+            const price = shopItem.querySelectorAll('p')[1];
+            price.innerText = euro + " EUR";
+        }
+    });
+}
