@@ -168,6 +168,13 @@ section div {
     color: #EEEEEE;
 }
 
+.btncontainer {
+    text-align: center;
+    display:flex; 
+    justify-content: center; 
+    margin-right: 10%;
+}
+
 #botonCalcular{
     background-color: #3387ff;
     border: 3px solid #17456b;

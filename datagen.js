@@ -1,11 +1,14 @@
-const Productdata = [
-    { name: "Croissant", value: 5000, image: "./images/croissants.avif"},
-    { name: "Torta", value: 15000, image: "./images/tortas.avif"},
-    { name: "Sandwich", value: 7500, image: "./images/sandwiches.avif"},
-    { name: "bebida fria", value: 3000, image: "./images/bebidasfrias.avif"}
+var Productdata = [
+    { name: "Croissant", value: 5000, image: "./images/croissants.avif", active: false, amount:1},
+    { name: "Torta", value: 15000, image: "./images/tortas.avif", active: false, amount:1},
+    { name: "Sandwich", value: 7500, image: "./images/sandwiches.avif", active: false, amount:1},
+    { name: "bebida fria", value: 3000, image: "./images/bebidasfrias.avif", active: false, amount:1},
 ];
+var currency = "pesos"
+
 let dolarunidad = 0
 let eurounidad = 0
+
 async function fetchDolar() {
     try {
         const response = await fetch("https://dolarapi.com/v1/dolares/blue");
@@ -30,6 +33,7 @@ async function fetchEuro() {
 
 fetchDolar();
 fetchEuro();
+
 
 const section = document.getElementById("shopSection");
 let shoprow = document.createElement("div");
@@ -93,8 +97,7 @@ Productdata.forEach((item, index) => {
 
 function preciopeso() {
     const shopItems = document.querySelectorAll('.shopItem'); 
-
-
+    currency = "Pesos"
     Productdata.forEach((item, index) => {
         const shopItem = shopItems[index];
         if (shopItem) {
@@ -106,8 +109,7 @@ function preciopeso() {
 
 function preciodolar() {
     const shopItems = document.querySelectorAll('.shopItem'); 
-    
-
+    currency = "Dolars"
     Productdata.forEach((item, index) => {
         const shopItem = shopItems[index];
         if (shopItem) {
@@ -121,8 +123,7 @@ function preciodolar() {
 
 function precioeuro() {
     const shopItems = document.querySelectorAll('.shopItem'); 
-    
-
+    currency = "Euros"
     Productdata.forEach((item, index) => {
         const shopItem = shopItems[index];
         if (shopItem) {
@@ -133,3 +134,18 @@ function precioeuro() {
         }
     });
 }
+
+const selectElement = document.querySelector("#currency");
+selectElement.addEventListener("change", (event) => {
+    switch (event.target.value) {
+        case "Pesos":
+            preciopeso();
+            break;
+        case "Dolars":
+            preciodolar();
+            break;
+        case "Euros":
+            precioeuro();
+            break;
+        }
+});

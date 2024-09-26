@@ -4,6 +4,9 @@
         <link href="style.css" rel="stylesheet" type="text/css" media="all">
         <script src="shop.js" defer></script>
         <script src="datagen.js" defer></script>
+        <script>
+
+        </script>
     </head>
     <body>
         
@@ -21,17 +24,23 @@
         </nav>
 
         <span class="contMoneda">
-            <div><button class="botonMoneda" type="button" onclick="preciopeso()">Precio en Pesos</button></div>
-            <div><button class="botonMoneda" type="button" onclick="preciodolar()">Precio en Dolares</button></div>
-            <div><button class="botonMoneda" type="button" onclick="precioeuro()">Precio en Euros</button></div>
+
         </span>
 
         <section id="shopSection"></section>
         
-        <span style="text-align: center;">
-            <div><button id="botonCalcular" type="button" onclick="calcular()">Calcular</button></div>
-            <div><button id="botonBorrar" type="button" onclick="borrar()">Borrar Todo</button></div>
-
+        <span class="btncontainer">
+            <span>
+                <select name="currencyselector" class="botonMoneda" id="currency">
+                    <option value="Pesos" onclick="preciopeso()">Pesos</option>
+                    <option value="Dolars" onclick="preciodolar()">Dolares</option>
+                    <option value="Euros" onclick="precioeuro()">Euros</option>
+                </select>
+            </span>
+            <span>
+                <div><button id="botonCalcular" type="button" onclick="calcular()">Calcular</button></div>
+                <div><button id="botonBorrar" type="button" onclick="borrar()">Borrar Todo</button></div>
+            </span>
         </span>
 
 
