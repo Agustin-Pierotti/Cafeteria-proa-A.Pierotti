@@ -44,21 +44,20 @@ function calcular() {
     activeButtons.forEach(button => {
         switch (currency) {
             case "Pesos":
-                message += `${button.name} | ${button.value} x ${button.amount}\n`;
-                total += button.value * button.amount;
+                message += `${button.name} | ${button.price} x ${button.amount}\n`;
+                total += button.price * button.amount;
                 break;
             case "Dolars":
-                message += `${button.name} | ${(Math.trunc((button.value/dolarunidad)* 100) / 100)} x ${button.amount}\n`;
-                total += (Math.trunc((button.value/dolarunidad)* 100) / 100) * button.amount;
+                message += `${button.name} | ${(Math.trunc((button.price/dolarunidad)* 100) / 100)} x ${button.amount}\n`;
+                total += (Math.trunc((button.price/dolarunidad)* 100) / 100) * button.amount;
                 break;
             case "Euros":
-                message += `${button.name} | ${(Math.trunc((button.value/eurounidad)* 100) / 100)} x ${button.amount}\n`;
-                total += (Math.trunc((button.value/eurounidad)* 100) / 100) * button.amount;
+                message += `${button.name} | ${(Math.trunc((button.price/eurounidad)* 100) / 100)} x ${button.amount}\n`;
+                total += (Math.trunc((button.price/eurounidad)* 100) / 100) * button.amount;
                 break;
-            }
-        
+        }
     });
-    message += `Total: ${total}`;
+    message += `Total: ${(Math.trunc(total*100))/100}`;
     alert(message);
 }
 
