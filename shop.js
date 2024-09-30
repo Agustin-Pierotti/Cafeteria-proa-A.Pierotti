@@ -76,6 +76,7 @@ function borrar() {
                 btn.innerHTML = "Agregar";
             }
         }
+        Productdata[index].active=false
     });
 }
 
