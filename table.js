@@ -26,19 +26,12 @@ async function fetchProducts() {
         Productdata.forEach(item => {
             const row = document.createElement('tr');
 
-            const createdAtCell = document.createElement('td');
-            createdAtCell.textContent = item.created_at;
-            row.appendChild(createdAtCell);
-
-            const idCell = document.createElement('td');
-            idCell.textContent = item.id;
-            row.appendChild(idCell);
 
             const imageCell = document.createElement('td');
             const link = document.createElement('a');
             link.href = item.image;
             link.textContent = item.image;
-            link.target = '_blank'; // Abrir en nueva pestaña
+            link.target = '_blank';
             imageCell.appendChild(link);
             row.appendChild(imageCell);
 
