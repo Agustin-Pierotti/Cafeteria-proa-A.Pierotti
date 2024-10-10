@@ -1,3 +1,15 @@
+let emailvar = 0
+let passwordvar = 0
+
+document.getElementById('login').addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    let emailvar = document.getElementById('email').value;
+    let passwordvar = document.getElementById('password').value;
+    authenticate();
+    console.log("la contraseña es: ", emailvar, passwordvar);
+});
+
 async function authenticate() {
     try {
         const response = await fetch('https://viodutbgusuvznsbkodx.supabase.co/auth/v1/token?grant_type=password', {
@@ -6,9 +18,10 @@ async function authenticate() {
                 'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZpb2R1dGJndXN1dnpuc2Jrb2R4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjYyMzU2MTUsImV4cCI6MjA0MTgxMTYxNX0.-sOtkuxY42Fdlav4tc_ar8A2E2i13h_VOUAfK1MUClw',
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-
-            }),
+            body: {
+                'email': emailvar,
+                'password': passwordvar,
+            },
         });
 
         const data = await response.json();
@@ -48,6 +61,7 @@ async function createProduct(product) {
     }
 
 }
+
 
 document.getElementById('product-form').addEventListener('submit', async (event) => {
     event.preventDefault();
