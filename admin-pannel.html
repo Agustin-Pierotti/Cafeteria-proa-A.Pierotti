@@ -1,10 +1,10 @@
 <html></html>
     <head>
-        <title>Cafeteria Pepón</title>
+        <title>Admin Pannel</title>
         <link href="style.css" rel="stylesheet" type="text/css" media="all">
         <script src="table.js" defer></script>
+        
         <script>
-
         </script>
     </head>
     <body>
@@ -34,5 +34,22 @@
 
             </tbody>
         </table>
+
+        <form id="product-form" style="margin: 3em 8em; ">
+            <div>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div>
+                <label for="price">Precio:</label>
+                <input type="number" id="price" required>
+            </div>
+            <div>
+                <label for="image">Imagen (URL):</label>
+                <input type="url" id="image" required>
+            </div>
+            <button type="submit">Crear Producto</button>
+        </form>
+        <script src="createItem.js"></script>
     </body>
 </html>

@@ -19,7 +19,6 @@ async function fetchProducts() {
         const data = await response.json();
 
         Productdata = data;
-        console.log(Productdata)
         
         const tbody = document.querySelector('#itemsTable tbody');
 
@@ -51,5 +50,11 @@ async function fetchProducts() {
         console.error('Error:', error);
     }
 }
+
 fetchProducts();
 
+async function refreshProducts() {
+    const tbody = document.querySelector('#itemsTable tbody');
+    tbody.innerHTML = ''; 
+    await fetchProducts(); 
+}
