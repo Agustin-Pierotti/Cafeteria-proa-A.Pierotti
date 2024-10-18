@@ -1,13 +1,8 @@
-let emailvar = 0
-let passwordvar = 0
+let emailInput = document.getElementById('email');
+let passwordInput = document.getElementById('password');
 
 document.getElementById('login').addEventListener('submit', async (event) => {
-    event.preventDefault();
-
-    let emailvar = document.getElementById('email').value;
-    let passwordvar = document.getElementById('password').value;
     authenticate();
-    console.log("la contraseña es: ", emailvar, passwordvar);
 });
 
 async function authenticate() {
@@ -18,12 +13,11 @@ async function authenticate() {
                 'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZpb2R1dGJndXN1dnpuc2Jrb2R4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjYyMzU2MTUsImV4cCI6MjA0MTgxMTYxNX0.-sOtkuxY42Fdlav4tc_ar8A2E2i13h_VOUAfK1MUClw',
                 'Content-Type': 'application/json',
             },
-            body: {
-                'email': emailvar,
-                'password': passwordvar,
-            },
+            body: JSON.stringify({
+                'email': emailInput.value,
+                'password': passwordInput.value,
+            }),
         });
-
         const data = await response.json();
         if (!response.ok) {
             throw new Error(data.message || 'Error en la autenticación');
@@ -61,7 +55,6 @@ async function createProduct(product) {
     }
 
 }
-
 
 document.getElementById('product-form').addEventListener('submit', async (event) => {
     event.preventDefault();

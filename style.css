@@ -62,6 +62,15 @@ a:hover {
     color: #d597414d
 }
 
+form>div {
+    justify-content: space-between;
+    display:flex;
+    padding: 0.3em;
+}
+form>div>label{
+    margin-right: 0.3em;
+}
+
 #ImagenCool {
     height: 48rem;
     display: flex;
