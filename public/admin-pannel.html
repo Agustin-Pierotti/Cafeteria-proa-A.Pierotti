@@ -1,4 +1,4 @@
-<html></html>
+<html>
     <head>
         <title>Admin Pannel</title>
         <link href="style.css" rel="stylesheet" type="text/css" media="all">
@@ -7,60 +7,59 @@
         <script>
         </script>
     </head>
-    <body>
+    <body class="font-lato">
 
-        <header>
-            <img id="logo" src="./images/logo.webp" alt="logo de la cafeteria pepón">
+        <header class="flex justify-center bg-slate-100">
+            <img class="h-24 rounded-full m-2" src="./images/logo.webp" alt="logo de la cafeteria pepón">
         </header>
-
-        <nav style="justify-content: space-between; display: flex;">
-            <div class="navbtn"><p>LA CAFETERÍA</p></div>
-            <div class="navbtn"><p>EL CAFÉ</p></div>
-            <div class="navbtn"><p>NUESTRO PRODUCTOS</p></div>
-            <div class="navbtn"><p>CONTACTO</p></div>
+        <nav class="bg-slate-100 flex justify-between">
+            <div class="w-[25%] text-center border-4 border-slate-100 hover:border-orange-900/60 p-4"><p>LA CAFETERÍA</p></div>
+            <div class="w-[25%] text-center border-4 border-slate-100 hover:border-orange-900/60 p-4"><p>EL CAFÉ</p></div>
+            <div class="w-[25%] text-center border-4 border-slate-100 hover:border-orange-900/60 p-4"><p>NUESTROS PRODUCTOS</p></div>
+            <div class="w-[25%] text-center border-4 border-slate-100 hover:border-orange-900/60 p-4"><p>CONTACTO</p></div>
         </nav>
 
 
         
-        <table id="itemsTable">
+        <table id="itemsTable" class="mt-12 mb-12 ml-[10%] mr-[10%] w-[75%] border-collapse">
             <thead>
                 <tr>
-                    <th>Image Link</th>
-                    <th>Name</th>
-                    <th>Price</th>
+                    <th class="border-1 p-2 text-left border-slate-100 bg-slate-50">Image Link</th>
+                    <th class="border-1 p-2 text-left border-slate-100 bg-slate-50">Name</th>
+                    <th class="border-1 p-2 text-left border-slate-100 bg-slate-50">Price</th>
                 </tr>
             </thead>
             <tbody>
 
             </tbody>
         </table>
-        <div style="display: flex; margin: 3em 8em;">
-            <form id="product-form" style="align-items: flex-start; ">
-                <div>
-                    <label for="name">Nombre:</label>
-                    <input type="text" id="name" required>
+        <div class="flex mt-12 mb-12 mr-32 ml-32">
+            <form id="product-form" class="items-start bg-slate-200 rounded">
+                <div class="justify-between flex p-2">
+                    <label class="pr-2" for="name">Nombre:</label>
+                    <input class="border-slate-200 border-3 rounded" type="text" id="name" required>
                 </div>
-                <div>
-                    <label for="price">Precio:</label>
-                    <input type="number" id="price" required>
+                <div class="justify-between flex p-2">
+                    <label class="pr-2" for="price">Precio:</label>
+                    <input class="border-slate-200 border-3 rounded" type="number" id="price" required>
                 </div>
-                <div>
-                    <label for="image">Imagen (URL):</label>
-                    <input type="url" id="image" required>
+                <div class="justify-between flex p-2">
+                    <label class="pr-2" for="image">Imagen (URL):</label>
+                    <input class="border-slate-200 border-3 rounded" type="url" id="image" required>
                 </div>
-                <button type="submit">Crear Producto</button>
+                <button type="submit" class="m-4 p-1 bg-sky-400 border-sky-800 text-slate-50 rounded">Crear Producto</button>
             </form>
 
-            <form id="login" style="align-items: flex-end; margin-left: 25rem;">
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="text" id="email" required>
+            <form id="login" class="items-end bg-slate-200 rounded ml-96">
+                <div class="justify-between flex p-2">
+                    <label class="pr-2" for="email">Email:</label>
+                    <input class="border-slate-200 border-3 rounded" type="text" id="email" required>
                 </div>
-                <div>
-                    <label for="password">Contraseña:</label>
-                    <input type="text" id="password" required>
+                <div class="justify-between flex p-2">
+                    <label class="pr-2" for="password">Contraseña:</label>
+                    <input class="border-slate-200 border-3 rounded" type="text" id="password" required>
                 </div>
-                <button type="submit"> Login </button>
+                <button type="submit" class="m-4 p-1 bg-sky-400 border-sky-800 text-slate-50 rounded"> Login </button>
             </form>
         </div>
         

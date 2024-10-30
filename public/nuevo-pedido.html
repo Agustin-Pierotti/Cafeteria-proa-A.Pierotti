@@ -8,67 +8,66 @@
 
         </script>
     </head>
-    <body>
-        
-
-
-        <header>
-            <img id="logo" src="./images/logo.webp" alt="logo de la cafeteria pepón">
+    <body class="font-lato">
+        <header class="flex justify-center bg-slate-100">
+            <img class="h-24 rounded-full m-2" src="./images/logo.webp" alt="logo de la cafeteria pepón" src="./images/logo.webp" alt="logo de la cafeteria pepón">
         </header>
 
-        <nav style="justify-content: space-between; display: flex;">
-            <div class="navbtn"><p>LA CAFETERÍA</p></div>
-            <div class="navbtn"><p>EL CAFÉ</p></div>
-            <div class="navbtn"><p>NUESTRO PRODUCTOS</p></div>
-            <div class="navbtn"><p>CONTACTO</p></div>
+        <nav class="bg-slate-100 flex justify-between">
+            <div class="w-[25%] text-center border-4 border-slate-100 hover:border-orange-900/60 p-4"><p>LA CAFETERÍA</p></div>
+            <div class="w-[25%] text-center border-4 border-slate-100 hover:border-orange-900/60 p-4"><p>EL CAFÉ</p></div>
+            <div class="w-[25%] text-center border-4 border-slate-100 hover:border-orange-900/60 p-4"><p>NUESTRO PRODUCTOS</p></div>
+            <div class="w-[25%] text-center border-4 border-slate-100 hover:border-orange-900/60 p-4"><p>CONTACTO</p></div>
         </nav>
 
-        <span class="contMoneda">
+        <span class="m-2 flex justify-center content-center">
 
         </span>
 
         <section id="shopSection"></section>
         
-        <span class="btncontainer">
+        <span class="text-center flex justify-center mr-[10%]">
             <span>
-                <select name="currencyselector" class="botonMoneda">
+                <select name="currencyselector" class="botonMoneda pt-1 pb-1 pl-3 pr-3 flex items-end text-base rounded m-2 border-3 bg-amber-500 border-3 border-amber-950 text-slate-100">
                     <option value="Pesos" onclick="preciopeso()">Pesos</option>
                     <option value="Dolars" onclick="preciodolar()">Dolares</option>
                     <option value="Euros" onclick="precioeuro()">Euros</option>
                 </select>
             </span>
             <span>
-                <div><button id="botonCalcular" type="button" onclick="calcular()">Calcular</button></div>
-                <div><button id="botonBorrar" type="button" onclick="borrar()">Borrar Todo</button></div>
+                <div><button id="botonCalcular" class="bg-sky-500 border-2 border-sky-900 rounded text-sky-100 pt-3 pb-3 pr-10 pl-10 text-2xl mb-3 border-5" type="button" onclick="calcular()">Calcular</button></div>
+                <div><button id="botonBorrar" class="bg-red-500 border-2 border-red-900 rounded text-red-100 pt-3 pb-3 pr-10 pl-10 text-2xl mb-3 border-5" type="button" onclick="borrar()">Borrar Todo</button></div>
             </span>
         </span>
 
 
-        <footer>
+        <footer class="p-3 bg-orange-900/80 text-slate-50 block justify-center items-center">
             <h1 style="text-align: center;">lorem ipsum</h1>
-            <div style="display: flex; margin: 0px 5em;">
-                <div id="LeftFooter">
+            <div class="ml-24 mr-24 flex w-[90%] justify-between">
+                <div class="justify-items-start w-52">
                     <ul>
                         <li>Av.Siempre Viva 5492</li>
                         <li>Corral de Bustos Ifflinger</li>
                         <li>13815 3180915153</li>
                     </ul>
                 </div>
-                <div id="RightFooter">
-                    <form>
-                        <label for="Nombre">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre"/>
+                <div class="justify-items-end w-52">
+                    <form class="inline-block">
+                        <label class="justify-start" for="Nombre">Nombre:</label>
+                        <input class="justify-end" type="text" id="nombre" name="nombre"/>
 
-                        <label for="Telefono">Telefono:</label>
-                        <input type="number" id="numero" name="numero"/>
+                        <label class="justify-start" for="Telefono">Telefono:</label>
+                        <input class="justify-end" type="number" id="numero" name="numero"/>
 
-                        <label for="Email">Email:</label>
-                        <input type="email" id="email" name="email"/>
+                        <label class="justify-start" for="Email">Email:</label>
+                        <input class="justify-end" type="email" id="email" name="email"/>
                         
                         <input type="submit" value="Enviar"/>
                     </form>
                 </div>
+
             </div>
+
         </footer>
         
     </body>

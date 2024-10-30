@@ -32,41 +32,47 @@ async function fetchProducts() {
         
         const section = document.getElementById("shopSection");
         let shoprow = document.createElement("div");
-        shoprow.classList.add("shopRow");
+        shoprow.classList.add("flex", "justify-center", "content-center", "mt-3", "mb-3");
         section.appendChild(shoprow);
 
         Productdata.forEach((item, index) => {
             const shopitem = document.createElement("div");
-            shopitem.classList.add("shopItem");
+            shopitem.classList.add("flex", "justify-center", "content-center", "text-center", "flex-col", "border-10", "border-slate-300", "h-92", "w-60", "text-xl", "ml-1", "mr-1", "bg-slate-100", "font-bold", "rounded");
 
             const itemname = document.createElement("p");
+            itemname.classList.add("mb-0", "mt-2")
             itemname.innerText = item.name;
 
             const image = document.createElement("img");
+            image.classList.add("mt-1", "mr-[0.5em]", "mb-1", "ml-[0.5em]", "rounded-[30px]", "border-slate-200", "object-cover", "aspect-square")
             image.src = item.image;
 
             const price = document.createElement("p");
+            price.classList.add("text-slate-400", "font-normal")
             price.innerText = item.price + " AR$";
 
             const amountbox = document.createElement("div");
-            amountbox.classList.add("amountbox", "invis");
-            amountbox.setAttribute("id", "Amount" + index); 
+            amountbox.classList.add("mx-auto","flex", "justify-center", "items-center","bg-slate-300","rounded", "invisible", "w-20", "h-8", "mb-2");
+            amountbox.setAttribute("id", "Amount" + index);
 
             const minusbtn = document.createElement("button");
+            minusbtn.classList.add("flex", "justify-center", "content-center", "bg-slate-400", "border-1", "border-slate-600", "text-slate-200", "font-[800]", "h-8", "w-6", "rounded", "active:bg-slate-100", "active:border-slate-400" , "active:text-slate-300")
             minusbtn.innerText = "-";
             minusbtn.setAttribute("onclick", "lessAmount(" + index + ")");
 
             const amountnumber = document.createElement("div");
+            amountnumber.classList.add("content-center", "justify-center", "p-1", "pl-2", "pr-2")
             amountnumber.innerText = "1";
 
             const plusbtn = document.createElement("button");
+            plusbtn.classList.add("flex", "justify-center", "content-center", "bg-slate-400", "border-1", "border-slate-600", "text-slate-200", "font-[800]", "h-8", "w-6", "rounded", "active:bg-slate-100", "active:border-slate-400" , "active:text-slate-300")
             plusbtn.innerText = "+";
             plusbtn.setAttribute("onclick", "addAmount(" + index + ")");
 
             const agregar = document.createElement("button");
             agregar.innerText = "Agregar";
             agregar.setAttribute("id", "btn" + index);
-            agregar.classList.add("BotonAgregar", "off");
+            agregar.classList.add("pt-3","pb-3", "pl-3", "pr-3", "flex", "justify-center", "text-sm", "rounded-xl", "mb-3", "text-slate-50", "border-4", "ml-4", "mr-4" , /* state style */  "bg-green-500", "border-green-700", "hover:bg-green-100", "hover:border-green-300", "hover:text-green-500");
             agregar.setAttribute("onclick", "toggleButton(" + index + ")");
 
             shopitem.appendChild(itemname);
@@ -81,7 +87,7 @@ async function fetchProducts() {
 
             if ((index + 1) % 4 === 0 && index !== Productdata.length - 1) {
                 shoprow = document.createElement("div");
-                shoprow.classList.add("shopRow");
+                shoprow.classList.add("flex", "justify-center", "content-center", "mt-3", "mb-3");
                 section.appendChild(shoprow);
             }
 
