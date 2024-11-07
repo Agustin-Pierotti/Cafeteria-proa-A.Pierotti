@@ -19,22 +19,25 @@
             <div class="w-[25%] text-center border-4 border-slate-100 hover:border-orange-900/60 p-4"><p>CONTACTO</p></div>
         </nav>
 
-
-        
-        <table id="itemsTable" class="mt-12 mb-12 ml-[10%] mr-[10%] w-[75%] border-collapse">
+        <table id="itemsTable" class="mt-12 mb-12 ml-[10%] mr-[10%] w-[75%] border-collapse rounded">
             <thead>
                 <tr>
-                    <th class="border-1 p-2 text-left border-slate-100 bg-slate-50">Image Link</th>
-                    <th class="border-1 p-2 text-left border-slate-100 bg-slate-50">Name</th>
-                    <th class="border-1 p-2 text-left border-slate-100 bg-slate-50">Price</th>
+                    <th class="border-1 p-2 text-left border-slate-100 bg-slate-400">Image Link</th>
+                    <th class="border-1 p-2 text-left border-slate-100 bg-slate-400">Name</th>
+                    <th class="border-1 p-2 text-left border-slate-100 bg-slate-400">Price</th>
+                    <th class="border-1 p-2 text-left border-slate-100 bg-slate-400 w-12"></th>
+                    <th class="border-1 p-2 text-left border-slate-100 bg-slate-400 w-12"></th>
                 </tr>
             </thead>
             <tbody>
 
             </tbody>
         </table>
+
+
+        <!-- crear producto-->
         <div class="flex mt-12 mb-12 mr-32 ml-32">
-            <form id="product-form" class="items-start bg-slate-200 rounded">
+            <form id="product-form" class="items-start bg-slate-200 rounded hidden m-4">
                 <div class="justify-between flex p-2">
                     <label class="pr-2" for="name">Nombre:</label>
                     <input class="border-slate-200 border-3 rounded" type="text" id="name" required>
@@ -49,8 +52,28 @@
                 </div>
                 <button type="submit" class="m-4 p-1 bg-sky-400 border-sky-800 text-slate-50 rounded">Crear Producto</button>
             </form>
+            
 
-            <form id="login" class="items-end bg-slate-200 rounded ml-96">
+            <!-- editar productor -->
+            <form id="edit-product-form" class="items-start bg-slate-200 rounded m-4 hidden">
+                <div><input type="text" id="edit-product-id" class="hidden"></div>
+                <div class="justify-between flex p-2">
+                    <label class="pr-2" for="image">nombre:</label>
+                    <input type="text" id="edit-name" class="border-slate-200 border-3 rounded">
+                </div>
+                <div class="justify-between flex p-2">
+                    <label class="pr-2" for="image">precio:</label>
+                    <input type="number" id="edit-price" class="border-slate-200 border-3 rounded">
+                </div>
+                <div class="justify-between flex p-2">
+                    <label class="pr-2" for="image">imagen (URL):</label>
+                    <input type="text" id="edit-image" class="border-slate-200 border-3 rounded">
+                </div>
+                <button type="submit" class="m-4 p-1 bg-sky-400 border-sky-800 text-slate-50 rounded">Actualizar producto</button>
+            </form>
+            
+            <!-- autenticar -->
+            <form id="login" class="items-start bg-slate-200 rounded m-4">
                 <div class="justify-between flex p-2">
                     <label class="pr-2" for="email">Email:</label>
                     <input class="border-slate-200 border-3 rounded" type="text" id="email" required>
@@ -59,10 +82,9 @@
                     <label class="pr-2" for="password">Contraseña:</label>
                     <input class="border-slate-200 border-3 rounded" type="text" id="password" required>
                 </div>
-                <button type="submit" class="m-4 p-1 bg-sky-400 border-sky-800 text-slate-50 rounded"> Login </button>
+                <button type="button" onclick="authenticate()" class="m-4 border-1 p-1 bg-sky-400 border-sky-800 text-slate-50 rounded active:bg-sky-200 "> Login </button>
             </form>
         </div>
-        
         <script src="createItem.js"></script>
     </body>
 </html>
