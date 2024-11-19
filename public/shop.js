@@ -11,6 +11,12 @@ function lessAmount(index) {
     amountbox.children[1].innerHTML = array.amount;
 }
 
+function updateform(index) {
+    const amountform = document.getElementById(`Amount${index}`)
+    const array = Productdata[index];
+    array.amount = amountform.value;
+}
+
 function addAmount(index) {
     const amountbox = document.getElementById(`Amount${index}`);
     const array = Productdata[index];
@@ -24,14 +30,14 @@ function toggleButton(index) {
     const state = Productdata[index];
     state.active = !state.active;
     if (state.active) {
-        btn.classList.remove("bg-green-500", "border-green-700", "hover:bg-green-100", "hover:border-green-300", "hover:text-green-500");
-        btn.classList.add("bg-red-500", "border-red-700", "hover:bg-red-100", "hover:border-red-300", "hover:text-red-500");
-        amtbox.classList.remove('invisible');
+        btn.classList.remove("bg-[#5d6127]", "border-[#554e1e]", "hover:bg-[#b3ac90]", "hover:border-[#7c7444]", "hover:text-green-100");
+        btn.classList.add("bg-[#a03920]", "border-[#9e2416]", "hover:bg-[#c79b8c]", "hover:border-[#a85e46]", "hover:text-red-100");
+        amtbox.removeAttribute("disabled")
         btn.innerHTML = "Quitar";
     } else {
-        btn.classList.remove("bg-red-500", "border-red-700", "hover:bg-red-100", "hover:border-red-300", "hover:text-red-500");
-        btn.classList.add("bg-green-500", "border-green-700", "hover:bg-green-100", "hover:border-green-300", "hover:text-green-500");
-        amtbox.classList.add('invisible');
+        btn.classList.remove("bg-[#a03920]", "border-[#9e2416]", "hover:bg-[#c79b8c]", "hover:border-[#a85e46]", "hover:text-red-100");
+        btn.classList.add("bg-[#5d6127]", "border-[#554e1e]", "hover:bg-[#b3ac90]", "hover:border-[#7c7444]", "hover:text-green-100");
+        amtbox.setAttribute("disabled", "")
         btn.innerHTML = "Agregar";
     }
 }
@@ -68,11 +74,11 @@ function borrar() {
         const amountbox = document.getElementById(`Amount${index}`);
         const btn = document.getElementById(`btn${index}`);
         if (amountbox) {
-            amountbox.children[1].innerHTML = cantidad.amount;
+            amountbox.value = cantidad.amount;
             if (btn) {
-                btn.classList.remove("bg-red-500", "border-red-700", "hover:bg-red-100", "hover:border-red-300", "hover:text-red-500");
-                btn.classList.add("bg-green-500", "border-green-700", "hover:bg-green-100", "hover:border-green-300", "hover:text-green-500");
-                amountbox.classList.add('invisible');
+                btn.classList.remove("bg-[#a03920]", "border-[#9e2416]", "hover:bg-[#c79b8c]", "hover:border-[#a85e46]", "hover:text-red-100");
+                btn.classList.add("bg-[#5d6127]", "border-[#554e1e]", "hover:bg-[#b3ac90]", "hover:border-[#7c7444]", "hover:text-green-100");
+                amountbox.setAttribute("disabled", "")
                 btn.innerHTML = "Agregar";
             }
         }

@@ -1,8 +1,5 @@
 let Productdata = [];
 
-
-
-
 async function fetchProducts() {
     const url = 'https://viodutbgusuvznsbkodx.supabase.co/rest/v1/products?select=*';
     const headers = {
@@ -28,7 +25,6 @@ async function fetchProducts() {
             active: false, 
             amount: 1 
         }));
-        console.log(Productdata)
         
         const section = document.getElementById("shopSection");
         let shoprow = document.createElement("div");
@@ -36,56 +32,61 @@ async function fetchProducts() {
         section.appendChild(shoprow);
 
         Productdata.forEach((item, index) => {
-            const shopitem = document.createElement("div");
-            shopitem.classList.add("flex", "justify-center", "content-center", "text-center", "flex-col", "border-10", "border-slate-300", "h-92", "w-60", "text-xl", "ml-1", "mr-1", "bg-slate-100", "font-bold", "rounded");
 
-            const itemname = document.createElement("p");
-            itemname.classList.add("mb-0", "mt-2")
-            itemname.innerText = item.name;
+            const shopitem = document.createElement("div");
+            shopitem.classList.add("w-80", "m-4", "rounded-md");
+
+            const anchorcont = document.createElement("a");
+            anchorcont.setAttribute("href", "#");
+            anchorcont.classList.add("group", "relative", "block", "overflow-hidden");
 
             const image = document.createElement("img");
-            image.classList.add("mt-1", "mr-[0.5em]", "mb-1", "ml-[0.5em]", "rounded-[30px]", "border-slate-200", "object-cover", "aspect-square")
+            image.classList.add("h-64", "w-full", "object-cover", "transition", "duration-500", "group-hover:scale-105", "sm:h-72")
             image.src = item.image;
 
+            const descontainer = document.createElement("div");
+            descontainer.classList.add("relative", "border", "border-amber-100", "bg-white", "p-6")
+
             const price = document.createElement("p");
-            price.classList.add("text-slate-400", "font-normal")
+            price.classList.add("text-amber-700", "priceTag")
             price.innerText = item.price + " AR$";
 
-            const amountbox = document.createElement("div");
-            amountbox.classList.add("mx-auto","flex", "justify-center", "items-center","bg-slate-300","rounded", "invisible", "w-20", "h-8", "mb-2");
-            amountbox.setAttribute("id", "Amount" + index);
+            const itemname = document.createElement("h3");
+            itemname.classList.add("mt-1.5", "text-lg", "font-medium", "text-amber-900")
+            itemname.innerText = item.name;
 
-            const minusbtn = document.createElement("button");
-            minusbtn.classList.add("flex", "justify-center", "content-center", "bg-slate-400", "border-1", "border-slate-600", "text-slate-200", "font-[800]", "h-8", "w-6", "rounded", "active:bg-slate-100", "active:border-slate-400" , "active:text-slate-300")
-            minusbtn.innerText = "-";
-            minusbtn.setAttribute("onclick", "lessAmount(" + index + ")");
+            const buttonform = document.createElement("form")
+            buttonform.classList.add("mt-4", "flex", "gap-4")
 
-            const amountnumber = document.createElement("div");
-            amountnumber.classList.add("content-center", "justify-center", "p-1", "pl-2", "pr-2")
-            amountnumber.innerText = "1";
-
-            const plusbtn = document.createElement("button");
-            plusbtn.classList.add("flex", "justify-center", "content-center", "bg-slate-400", "border-1", "border-slate-600", "text-slate-200", "font-[800]", "h-8", "w-6", "rounded", "active:bg-slate-100", "active:border-slate-400" , "active:text-slate-300")
-            plusbtn.innerText = "+";
-            plusbtn.setAttribute("onclick", "addAmount(" + index + ")");
+            const amountform = document.createElement("input")
+            amountform.setAttribute("type", "number")
+            amountform.setAttribute("id", "Amount" + index);
+            amountform.setAttribute("name", "Amount" + index);
+            amountform.setAttribute("onclick", "updateform(" + index + ")");
+            amountform.setAttribute("min", "1");
+            amountform.value = 1
+            amountform.setAttribute("disabled", "");
+            amountform.classList.add("border-4", "border-amber-900", "w-20", "text-center", "pl-2", "rounded", "disabled:opacity-50");
 
             const agregar = document.createElement("button");
             agregar.innerText = "Agregar";
+            agregar.setAttribute("type", "button");
             agregar.setAttribute("id", "btn" + index);
-            agregar.classList.add("pt-3","pb-3", "pl-3", "pr-3", "flex", "justify-center", "text-sm", "rounded-xl", "mb-3", "text-slate-50", "border-4", "ml-4", "mr-4" , /* state style */  "bg-green-500", "border-green-700", "hover:bg-green-100", "hover:border-green-300", "hover:text-green-500");
+            agregar.classList.add("block", "w-full", "rounded", "bg-[#5d6127]", "border-[#554e1e]", "hover:bg-[#b3ac90]", "hover:border-[#7c7444]", "hover:text-green-100", "px-4", "py-3", "border-4", "text-sm", "font-medium", "transition", "hover:scale-105", "text-white");
             agregar.setAttribute("onclick", "toggleButton(" + index + ")");
 
-            shopitem.appendChild(itemname);
-            shopitem.appendChild(image);
-            shopitem.appendChild(price);
-            shopitem.appendChild(amountbox);
-            amountbox.appendChild(minusbtn);
-            amountbox.appendChild(amountnumber);
-            amountbox.appendChild(plusbtn);
-            shopitem.appendChild(agregar);
+
+            shopitem.appendChild(anchorcont);
+            anchorcont.appendChild(image);
+            anchorcont.appendChild(descontainer);
+            descontainer.appendChild(price);
+            descontainer.appendChild(itemname);
+            descontainer.appendChild(buttonform);
+            buttonform.appendChild(amountform);
+            buttonform.appendChild(agregar);
             shoprow.appendChild(shopitem);
 
-            if ((index + 1) % 4 === 0 && index !== Productdata.length - 1) {
+            if ((index + 1) % 5 === 0 && index !== Productdata.length - 1) {
                 shoprow = document.createElement("div");
                 shoprow.classList.add("flex", "justify-center", "content-center", "mt-3", "mb-3");
                 section.appendChild(shoprow);
@@ -131,42 +132,33 @@ fetchDolar();
 fetchEuro();
 
 function preciopeso() {
-    const shopItems = document.querySelectorAll('.shopItem'); 
+    const shopItems = document.querySelectorAll('.priceTag'); 
     currency = "Pesos"
     Productdata.forEach((item, index) => {
-        const shopItem = shopItems[index];
-        if (shopItem) {
-            const price = shopItem.querySelectorAll('p')[1];
-            price.innerText = item.price + " AR$";
-        }
+        const price = shopItems[index];
+        price.innerHTML = item.price + " AR$";
     });
 }
 
 function preciodolar() {
-    const shopItems = document.querySelectorAll('.shopItem'); 
+    const shopItems = document.querySelectorAll('.priceTag'); 
     currency = "Dolars"
     Productdata.forEach((item, index) => {
-        const shopItem = shopItems[index];
-        if (shopItem) {
-            dolar = item.price / dolarunidad ;
-            dolar = Math.trunc(dolar* 100) / 100;
-            const price = shopItem.querySelectorAll('p')[1];
-            price.innerText = dolar + " U$D";
-        }
+        const price = shopItems[index];
+        dolar = item.price / dolarunidad ;
+        dolar = Math.trunc(dolar* 100) / 100;
+        price.innerHTML = dolar + " U$D";
     });
 }
 
 function precioeuro() {
-    const shopItems = document.querySelectorAll('.shopItem'); 
+    const shopItems = document.querySelectorAll('.priceTag'); 
     currency = "Euros"
     Productdata.forEach((item, index) => {
-        const shopItem = shopItems[index];
-        if (shopItem) {
-            euro = item.price / eurounidad ;
-            euro = Math.trunc(euro* 100) / 100;
-            const price = shopItem.querySelectorAll('p')[1];
-            price.innerText = euro + " EUR";
-        }
+        const price = shopItems[index];
+        euro = item.price / eurounidad ;
+        euro = Math.trunc(euro* 100) / 100;
+        price.innerText = euro + " EUR";
     });
 }
 

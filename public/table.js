@@ -46,7 +46,7 @@ async function fetchProducts() {
             row.appendChild(editCell)
             const editImage = document.createElement('img');
             editImage.setAttribute("src","./images/editar.png")
-            editImage.classList.add("grayscale", "hover:grayscale-[50%]", "active:grayscale-0", "m-2")
+            editImage.classList.add("grayscale", "hover:grayscale-[50%]", "active:grayscale-0", "m-2", "w-[25px]", "h-[25px]")
             editImage.setAttribute("id", "Edit" + item.id);
             editImage.setAttribute("onclick", "editproducts(" + item.id + ")" );
             editCell.appendChild(editImage)
@@ -55,7 +55,7 @@ async function fetchProducts() {
             row.appendChild(deleteCell)
             const deleteImage = document.createElement('img');
             deleteImage.setAttribute("src","./images/borrar.png")
-            deleteImage.classList.add("grayscale", "hover:grayscale-[50%]", "active:grayscale-0", "m-2")
+            deleteImage.classList.add("grayscale", "hover:grayscale-[50%]", "active:grayscale-0", "m-2", "w-[25px]", "h-[25px]")
             deleteImage.setAttribute("id", "Delete" + item.id);
             deleteImage.setAttribute("onclick", "deleteProduct(" + item.id + ")");
             deleteCell.appendChild(deleteImage)
@@ -67,7 +67,7 @@ async function fetchProducts() {
         tbody.appendChild(xtrarow)
         const agregarImage = document.createElement('img');
         agregarImage.setAttribute("src","./images/agregar.png")
-        agregarImage.classList.add("grayscale", "hover:grayscale-[50%]", "active:grayscale-0", "m-2")
+        agregarImage.classList.add("grayscale", "hover:grayscale-[50%]", "active:grayscale-0", "m-2", "w-[25px]", "h-[25px]")
         agregarImage.setAttribute("id", "Add");
         xtrarow.appendChild(agregarImage)
 
